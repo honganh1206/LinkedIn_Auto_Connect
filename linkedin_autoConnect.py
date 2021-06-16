@@ -25,7 +25,7 @@ class LinkedIn():
         driver = self.driver
         return driver
 
-    def test_login(self, driver):
+    def login(self, driver):
         driver.get(SIGNING_IN_URL)
         #enter username and password
         username = driver.find_element_by_css_selector("#session_key")
@@ -54,7 +54,7 @@ class LinkedIn():
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 
             # wait to load page
-            time.sleep(SCROLL_PAUSE_TIME)
+            time.sleep(WAIT_TIME)
 
             # calculate new scroll height and compare with last scroll height
             new_height = driver.execute_script("return document.body.scrollHeight")
